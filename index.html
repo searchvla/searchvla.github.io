@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Open-World Object Manipulation with Vision-Language-Action Models via Synthetic Multi-Modal Data">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-World Object Manipulation with Vision-Language-Action Models via Synthetic Multi-Modal Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    .video-slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .video-slider {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: center;
+    }
+    .slider-btn {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .slider-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const videos = document.querySelectorAll(".video-slide");
+
+    function showVideo(index) {
+        videos.forEach((video, i) => {
+            video.style.display = i === index ? "block" : "none";
+        });
+    }
+
+    function prevVideo() {
+        currentIndex = (currentIndex === 0) ? videos.length - 1 : currentIndex - 1;
+        showVideo(currentIndex);
+    }
+
+    function nextVideo() {
+        currentIndex = (currentIndex === videos.length - 1) ? 0 : currentIndex + 1;
+        showVideo(currentIndex);
+    }
+
+    document.querySelector(".slider-btn.left").addEventListener("click", prevVideo);
+    document.querySelector(".slider-btn.right").addEventListener("click", nextVideo);
+});
+
+  </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Open-World Object Manipulation with <br>Vision-Language-Action Models via Synthetic Multi-Modal Data</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Yefei Chen</a><sup>1,*</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yichen Zhu</a><sup>2,*,&dagger;</sup>,
+            </span>
+            <span class="author-block">
+              <a>Junjie Wen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Zhongyi Zhou</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Minjie Zhu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Jinming Li</a><sup>3</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a>Yaxuan Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a>Yaxin Peng</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a>Chaomin Shen</a><sup>1,&dagger;</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>East China Normal University,</span>
+            <span class="author-block"><sup>2</sup>,</span>
+            <span class="author-block"><sup>3</sup>Shanghai University</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+            <span class="author-block"><sup>&dagger;</sup>Corresponding author</span>
+            
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="xx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="xx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns">
+      <div class="column has-text-centered">
+        <img src="./static/images/searchvla.png"
+              class="move-exp" style="max-width: 80%; height: auto;"/>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          Human-robot interaction in real-world environments requires robots to understand and execute natural language instructions that may reference previously unseen objects. Traditional imitation learning approaches can teach dexterous manipulation skills, but their reliance on large amounts of robot data limits scalability and adaptability to open-world settings. One key challenge in this context is enabling robots to follow user instructions involving novel objects—for example, when asked to ``hand over the peach.'' after only being trained with ``hand over the apple.'' This gap in instruction-driven object understanding has yet to be adequately addressed in prior end-to-end visuomotor policy learning. In this paper, we present a simple yet effective framework for instruction-based interaction through Vision-Language-Action (VLA) models, referred to as \textbf{SearchVLA}. At the core of our approach is a lightweight pipeline, \textbf{Search2Scene}, which allows the robot to search for target objects in online resources, user shopping records, or local data upon receiving an instruction. By leveraging vision-language pair data, our method establishs an implicit link between novel objects and the instructed actions without requiring additional demonstrations. We evaluate SearchVLA on a real robotic platform across multiple instruction-following tasks, demonstrating its ability to generalize across 100 novel objects with a 64\% success rate in selecting objects not seen during training. These results highlight the effectiveness of our approach in enabling scalable, real-world human-robot interaction and reducing the need for extensive human demonstrations, paving the way for more flexible and scalable robotic systems.
+
+
+        </div>
+      </div>
+    </div>
+
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Search2Scene</h2>
+        <div class="content has-text-justified">
+          We propose Search2Scene, a dedicated pipeline for synthesizing high-quality image–text data to enable zero-shot generalization in robotic manipulation. Search2Scene first parses user input to identify a target object and searches for high-quality images of it. The pipeline then processes these images using 3D reconstruction to create multi-view representations. These representations are subsequently rendered into background scenes to synthesize composite images. Finally, the resulting composite images, along with associated localization annotations, are paired with text descriptions to form a structured image–text dataset. This dataset is co-finetuned with teleoperated robot interaction data, while the robot data itself is enriched with localization-guided reasoning. By using this pipeline to produce data localization as a bridging representation, we create a unified pathway between visual-language inputs and robotic actions. This enables zero-shot object generalization: the model can recognize and manipulate novel objects—even those absent from robot training data—without task-specific retraining.
+
+        </div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <img src="./static/images/data-pipeline.png"
+              class="search2scene" style="max-width: 80%; height: auto;"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <!-- Experimental Results. -->
+        <h2 class="title is-3 is-centered has-text-centered">Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            We start by evaluating the generalization performance of our SearchVLA in selecting object. The experimental result is shown in the following figure.
+            Our method achieves a 100% success rate for in-distribution objects selecting and a 64% success rate for out-of-distribution objects selecting.
+            Notably, SearchVLA w/o bbox achieves only a 19% success rate in OOD evaluation, despite achieving a 100% success rate in the ID test.
+            This illustrates that without explicit grounding and a structured reasoning process, the model struggles to differentiate objects in vision-language data.
+          </p>
+          <div class="columns">
+            <!-- 左侧图片 -->
+            <div class="column has-text-centered">
+              <img src="./static/images/move-exp.png" class="move-exp" style="max-width: 100%; height: auto;"/>
+            </div>
+            
+            <!-- 右侧滑动组件 -->
+            <div class="column has-text-centered">
+              <div class="content">
+                <p>
+                    Rollouts
+                </p>
+              <div class="video-slider-container">
+                <button class="slider-btn left" onclick="prevVideo()">&#9665;</button>
+                <div class="video-slider">
+                  <video class="video-slide" autoplay controls muted loop style="border-radius: 5px; display: block;">
+                    <source src="static/videos/move_to/move-to-ood.mp4" type="video/mp4">
+                  </video>
+                  <video class="video-slide" autoplay controls muted loop style="border-radius: 5px; display: none;">
+                    <source src="static/videos/move_to/move-to-id.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <button class="slider-btn right" onclick="nextVideo()">&#9655;</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- <div class="columns">
+            <div class="column has-text-centered">
+              <img src="./static/images/move-exp.jpg"
+                    class="move-exp" style="max-width: 100%; height: auto;"/>
+            </div>
+
+          
+
+
+            <div class="column has-text-centered">
+                <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                    <source src="static/videos/move_to/move-to-ood.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="column has-text-centered">
+                <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/move_to/move-to-id.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div> -->
+        </div>
+        <br/>
+        <!-- Qualitative Comparison. -->
+        <h2 class="title is-4 is-centered has-text-centered">Combining with More Skills.</h2>
+        <div class="content has-text-justified">
+          <p>
+            We also expands the evaluation to encompass more complex skills, specifically "pick & place", "push" and "rotate".
+            Our experimental results show that SearchVLA can transfer skills to objects unseen in robot data but present in vision-language data.
+            The following video is played at 2× speed for better visualization.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+            <p style="font-size: 100%"><b>Bin Picking</b>
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/bin-picking/bin-picking-id.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="column has-text-centered">
+            <p style="font-size: 100%"><b>Rotate</b>
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/rotate/rotate-id.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="column has-text-centered">
+            <p style="font-size: 100%"><b>Push</b>
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/push/push-id.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column has-text-centered">
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/bin-picking/bin-picking-ood.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="column has-text-centered">
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/rotate/rotate-ood.mp4" type="video/mp4">
+              </video>
+          </div>
+          <div class="column has-text-centered">
+              <video poster="" id=""autoplay controls muted loop height="100%" playbackRate=2.0 style="border-radius: 5px;">
+                  <source src="static/videos/push/push-ood.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+        <!--/ Experimental Results. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{,
+  title     = {Open-World Object Manipulation with Vision-Language-Action Models via Synthetic Multi-Modal Data},
+  author    = {},
+  booktitle = {},
+  year      = {},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a
+                                href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>
+                                and <a href="https://eureka-research.github.io/">Eureka</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
